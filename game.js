@@ -54,6 +54,22 @@ function autoGatherResources() {
     updateDisplay();
 }
 
+// Initialize button event listeners after the DOM has fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listeners for all game actions
+    document.getElementById('gatherWoodBtn').addEventListener('click', function() { manualGather('wood'); });
+    document.getElementById('gatherStoneBtn').addEventListener('click', function() { manualGather('stone'); });
+    document.getElementById('gatherFoodBtn').addEventListener('click', function() { manualGather('food'); });
+    document.getElementById('buildSawmillBtn').addEventListener('click', function() { purchaseBuilding('sawmill'); });
+    document.getElementById('buildQuarryBtn').addEventListener('click', function() { purchaseBuilding('quarry'); });
+    document.getElementById('buildMineBtn').addEventListener('click', function() { purchaseBuilding('mine'); });
+    document.getElementById('buildFarmBtn').addEventListener('click', function() { purchaseBuilding('farm'); });
+    document.getElementById('buildBankBtn').addEventListener('click', function() { purchaseBuilding('bank'); });
+    document.getElementById('upgradeSawmillBtn').addEventListener('click', function() { upgradeBuilding('sawmill'); });
+    document.getElementById('exploreBtn').addEventListener('click', explore);
+    document.getElementById('tradeWoodBtn').addEventListener('click', function() { tradeResources('wood', 10, 5); });
+});
+
 // Manual gathering of resources
 function manualGather(resource) {
     gameData.resources[resource] += 1;
