@@ -2,86 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Island Survival</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #e0f7fa;
-            color: #005b69;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        h1 {
-            color: #00796b;
-        }
-        #pearl-counter {
-            font-size: 28px;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-        button {
-            background-color: #26a69a;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #00897b;
-        }
-        .shop-item, .quest-item, .spell-item, .achievement {
-            margin-top: 20px;
-            border: 1px solid #b2dfdb;
-            padding: 10px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        #shop-items, #achievements, #quests, #spellbook {
-            margin-top: 20px;
-        }
-        .title {
-            font-size: 24px;
-            color: #00695c;
-            margin-top: 30px;
-            border-bottom: 2px solid #26a69a;
-        }
-        #events {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #e0f2f1;
-            border-left: 3px solid #26a69a;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Island Adventure</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Island Survival</h1>
-    <div id="pearl-counter">Pearls: 0</div>
-    <button onclick="searchPearls()">Search for pearls on the beach</button>
-    <button onclick="exploreIsland()">Explore the island</button>
-    
-    <div class="title">Resources and Upgrades</div>
-    <div id="shop-items">
-        <button onclick="buyUpgrade()">Buy Net (Cost: 100 pearls, +1 Pearl/Sec)</button>
-    </div>
-
-    <div class="title">Achievements</div>
-    <div id="achievements"></div>
-    
-    <div class="title">Quests</div>
-    <div id="quests">
-        <div class="quest-item">
-            <button onclick="startQuest()">Embark on a Quest (200 pearls)</button>
+    <div id="game">
+        <div id="status">
+            <p id="location">Location: Island</p>
+            <p id="pearls">Pearls: 0</p>
+            <p id="wood">Wood: 0</p>
+            <p id="stones">Stones: 0</p>
+            <p id="morale">Morale: Neutral</p>
         </div>
+        <div id="choices">
+            <button onclick="makeChoice(1)">Collect Wood</button>
+            <button onclick="makeChoice(2)">Collect Stones</button>
+            <button onclick="makeChoice(3)">Lay Down and Cry</button>
+        </div>
+        <p id="story"></p>
     </div>
-    
-    <div id="events"></div>
+    <script src="game.js"></script>
 </body>
 </html>
+
