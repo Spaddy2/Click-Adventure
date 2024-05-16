@@ -1,14 +1,13 @@
 let pearls = 0;
-let pearlsPerSecond = 1;
-let resourcePrice = 100;
+let pearlsPerSecond = 1; // Start with 1 pearl per second as a base rate
 
 function updatePearlCount() {
-    pearls += pearlsPerSecond;
+    pearls += pearlsPerSecond; // Automatically add pearls based on the current rate
     document.getElementById('pearl-counter').innerText = `Pearls: ${pearls}`;
 }
 
 function searchPearls() {
-    pearls += 10;
+    pearls += 10; // Manually add pearls for specific actions
     updatePearlCount();
     displayEvent("You found 10 pearls on the beach.");
 }
@@ -38,4 +37,4 @@ function displayEvent(message) {
     eventsDiv.innerHTML += `<div>${message}</div>`;
 }
 
-setInterval(updatePearlCount, 1000); // Update the pearl count every second
+setInterval(updatePearlCount, 1000); // Update the pearl count every second to simulate passive accumulation
