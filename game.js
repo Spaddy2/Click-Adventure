@@ -2,21 +2,32 @@
 document.addEventListener('DOMContentLoaded', function() {
     let resources = { wood: 0, stone: 0 };
     let upgrades = {
-        axe: { level: 0, cost: 100, nextCostIncrease: 250 },
-        pickaxe: { level: 0, cost: 100, nextCostIncrease: 250 }
+        axe: { level: 0, cost: 100, nextCostIncrease: 250, isAvailable: false },
+        pickaxe: { level: 0, cost: 100, nextCostIncrease: 250, isAvailable: false }
     };
 
     function updateDisplay() {
         document.getElementById('wood').textContent = `Wood: ${resources.wood}`;
         document.getElementById('stone').textContent = `Stone: ${resources.stone}`;
-        if (resources.wood >= 100) {
+        
+        // Show stone button and resource display when wood reaches 500 for the first time
+        if (resources.wood >= 500 && document.getElementById('stone').style.display === 'none') {
+            document.getElementById('stone').style.display = 'block';
+            document.getElementById('stoneButton').style.display = 'inline';
+        }
+
+        // Upgrade buttons appear and update only when enough resources are available
+        if (resources.wood >= upgrades.axe.cost && !upgrades.axe.isAvailable) {
             document.getElementById('axeButton').style.display = 'inline';
-            document.getElementById('axeButton').textContent = `Upgrade Axe - Cost: ${upgrades.axe.cost} Wood`;
+            upgrades.axe.isAvailable = true;
         }
-        if (resources.stone >= 100) {
+        if (resources.stone >= upgrades.pickaxe.cost && !upgrades.pickaxe.isAvailable) {
             document.getElementById('pickaxeButton').style.display = 'inline';
-            document.getElementById('pickaxeButton').textContent = `Upgrade Pickaxe - Cost: ${upgrades.pickaxe.cost} Stone`;
+            upgrades.pickaxe.isAvailable = true;
         }
+
+        document.getElementById('axeButton').textContent = `Upgrade Axe - Cost: ${upgrades.axe.cost} Wood`;
+        document.getElementById('pickaxeButton').textContent = `Upgrade Pickaxe - Cost: ${upgrades.pickaxe.cost} Stone`;
     }
 
     document.getElementById('woodButton').addEventListener('click', function() {
