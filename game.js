@@ -36,9 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     document.getElementById('woodButton').addEventListener('click', function() {
-        resources.wood += 1 + upgrades.axe.level;
-        updateDisplay();
-    });
+    resources.wood += 1 + upgrades.axe.level; // Increment wood by 1 plus the level of the axe upgrade
+    updateDisplay(); // Update UI elements based on new resource counts
+});
+
 
     document.getElementById('stoneButton').addEventListener('click', function() {
         resources.stone += 1 + upgrades.pickaxe.level;
