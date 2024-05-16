@@ -7,20 +7,25 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     function updateDisplay() {
-        document.getElementById('wood').textContent = `Wood: ${resources.wood}`;
-        document.getElementById('stone').textContent = `Stone: ${resources.stone}`;
-        
-        // Show stone button and resource display when wood reaches 500 for the first time
-        if (resources.wood >= 500 && document.getElementById('stone').style.display === 'none') {
-            document.getElementById('stone').style.display = 'block';
-            document.getElementById('stoneButton').style.display = 'inline';
-        }
+    document.getElementById('wood').textContent = `Wood: ${resources.wood}`;
+    document.getElementById('stone').textContent = `Stone: ${resources.stone}`;
+    
+    // Ensure the stone gathering and button are shown correctly at 500 wood
+    if (resources.wood >= 500 && document.getElementById('stone').style.display === 'none') {
+        document.getElementById('stone').style.display = 'block';
+        document.getElementById('stoneButton').style.display = 'inline';
+    }
 
-        // Upgrade buttons appear and update only when enough resources are available
-        if (resources.wood >= upgrades.axe.cost && !upgrades.axe.isAvailable) {
-            document.getElementById('axeButton').style.display = 'inline';
-            upgrades.axe.isAvailable = true;
-        }
+    // Show the axe upgrade button only when the player has enough wood and it hasn't been shown before
+    if (resources.wood >= 100 && !upgrades.axe.isAvailable) {
+        document.getElementById('axeButton').style.display = 'inline';
+        upgrades.axe.isAvailable = true; // Ensures this block doesn't run again unnecessarily
+    }
+
+    document.getElementById('axeButton').textContent = `Upgrade Axe - Cost: ${upgrades.axe.cost} Wood`;
+    document.getElementById('pickaxeButton').textContent = `Upgrade Pickaxe - Cost: ${upgrades.pickaxe.cost} Stone`;
+}
+
         if (resources.stone >= upgrades.pickaxe.cost && !upgrades.pickaxe.isAvailable) {
             document.getElementById('pickaxeButton').style.display = 'inline';
             upgrades.pickaxe.isAvailable = true;
