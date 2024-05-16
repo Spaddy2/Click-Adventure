@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click Adventure</title>
+    <title>Dark Candy Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="gameContainer">
-        <h1>Click Adventure</h1>
-        <p id="introText">Welcome to the wilderness! Start by gathering some wood to build your first shelter.</p>
-        <div id="resourceContainer">
-            <p id="wood">Wood: 0</p>
-            <p id="stone" style="display: none;">Stone: 0</p>
+        <h1>Dark Candy Game</h1>
+        <div id="resources">
+            <p>Wood: <span id="woodCount">0</span></p>
+            <p>Stone: <span id="stoneCount">0</span></p>
+            <p>Iron: <span id="ironCount">0</span></p>
+            <p>Coins: <span id="coinsCount">0</span></p>
         </div>
-        <button id="woodButton">Gather Wood</button>
-        <button id="stoneButton" style="display: none;">Gather Stone</button>
-        <div id="upgradesContainer" style="display: none;">
-            <h2>Upgrades</h2>
-            <button id="axeButton" style="display: none;">Upgrade Axe - Cost: 100 Wood</button>
-            <button id="pickaxeButton" style="display: none;">Upgrade Pickaxe - Cost: 100 Stone</button>
+        <div id="actions">
+            <button onclick="purchaseBuilding('sawmill')">Build Sawmill</button>
+            <button onclick="purchaseBuilding('quarry')">Build Quarry</button>
+            <button onclick="purchaseBuilding('mine')">Build Mine</button>
+            <button onclick="purchaseBuilding('bank')">Build Bank</button>
+            <button onclick="exploreNewArea()">Explore New Area</button>
         </div>
-        <div id="craftingContainer" style="display: none;">
-            <h2>Crafting</h2>
-            <button id="buildHouseButton" style="display: none;">Build House - Cost: 500 Wood</button>
+        <div id="story">
+            <p id="storyText">Welcome, adventurer!</p>
         </div>
-        <p id="travelers" style="display: none;">Travelers waiting for housing: 0</p>
     </div>
-    <script src="game.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
