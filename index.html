@@ -9,21 +9,24 @@
 <body>
     <div id="gameContainer">
         <h1>Click Adventure</h1>
-        <p id="introText">You wake up to the sound of splashing waves and the sun beating down on your face.</p>
+        <p id="introText">Welcome to the wilderness! Start by gathering some wood to build your first shelter.</p>
         <div id="resourceContainer">
             <p id="wood">Wood: 0</p>
-            <p id="stone">Stone: 0</p>
+            <p id="stone" style="display: none;">Stone: 0</p>
         </div>
         <button id="woodButton">Gather Wood</button>
-        <button id="stoneButton">Gather Stone</button>
-        <div id="upgradesContainer">
-            <h2>Upgrades</h2>
-            <button id="axeButton">Upgrade Axe - Cost: 100 Wood</button>
-            <button id="pickaxeButton">Upgrade Pickaxe - Cost: 100 Stone</button>
-        </div>
-        <div id="craftingContainer">
-            <h2>Crafting</h2>
-            <button id="buildShelterButton">Build Shelter - Cost: 200 Wood, 100 Stone</button>
+        <button id="stoneButton" style="display: none;">Gather Stone</button>
+        <div id="villageContainer" style="display:none;">
+            <div id="upgradesContainer">
+                <h2>Upgrades</h2>
+                <button id="axeButton">Upgrade Axe - Cost: 100 Wood</button>
+                <button id="pickaxeButton">Upgrade Pickaxe - Cost: 100 Stone</button>
+            </div>
+            <div id="craftingContainer">
+                <h2>Crafting</h2>
+                <button id="buildHouseButton">Build House - Cost: 500 Wood</button>
+            </div>
+            <p id="travelers">Travelers waiting for housing: 0</p>
         </div>
     </div>
     <script src="game.js"></script>
