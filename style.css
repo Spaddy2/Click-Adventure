@@ -1,85 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Island Survival</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #e0f7fa; /* Light blue to represent the sky or shallow water */
-            color: #005b69; /* Deep ocean blue for text, represents the ocean */
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        h1 {
-            color: #00796b; /* Jungle green, reflecting lush foliage */
-        }
-        #pearl-counter {
-            font-size: 28px;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-        button {
-            background-color: #26a69a; /* Teal, reminiscent of tropical waters */
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #00897b; /* Darker teal for hover effects */
-        }
-        .shop-item, .quest-item, .spell-item, .achievement {
-            margin-top: 20px;
-            border: 1px solid #b2dfdb; /* Light teal border for separation */
-            padding: 10px;
-            background-color: #fff; /* White background for clear content separation */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-        }
-        #shop-items, #achievements, #quests, #spellbook {
-            margin-top: 20px;
-        }
-        .title {
-            font-size: 24px;
-            color: #00695c; /* Dark green for section titles */
-            margin-top: 30px;
-            border-bottom: 2px solid #26a69a; /* Teal line to highlight titles */
-        }
-        #events {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #e0f2f1; /* Very light teal for event logs */
-            border-left: 3px solid #26a69a; /* Stronger teal border for emphasis */
-        }
-    </style>
-</head>
-<body>
-    <h1>Island Survival</h1>
-    <div id="pearl-counter">Pearls: 0</div>
-    <button onclick="searchPearls()">Search for pearls on the beach</button>
-    <button onclick="exploreIsland()">Explore the island</button>
+/* style.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
 
-    <div class="title">Resources</div>
-    <div id="shop-items"></div>
-    
-    <div class="title">Achievements</div>
-    <div id="achievements"></div>
-    
-    <div class="title">Quests</div>
-    <div id="quests">
-        <div class="quest-item">
-            <button onclick="startQuest()">Embark on a Quest (200 pearls)</button>
-        </div>
-    </div>
-    
-    <div id="events"></div>
-</body>
-</html>
+#game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#status p, #story {
+    margin: 10px;
+    font-size: 18px;
+}
+
+#choices button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#choices button:hover {
+    background-color: #0056b3;
+}
