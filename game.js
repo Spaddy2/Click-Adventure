@@ -4,9 +4,7 @@ let wood = 0;
 let stones = 0;
 let morale = "neutral";
 
-// Initialize pearl collection every second
-let pearlInterval = setInterval(collectPearls, 1000);
-
+// Function to collect pearls every second
 function collectPearls() {
     pearls += 1;
     document.getElementById('pearls').textContent = 'Pearls: ' + pearls;
@@ -22,20 +20,29 @@ function updateStatus() {
     `;
 }
 
+// Initialize pearl collection timer
+setInterval(collectPearls, 1000);
+
+// Function to trigger a decision-making pop-up
 function promptDecision() {
     let choice = prompt("Choose an action:\n1. Collect Wood\n2. Collect Stones\n3. Lay Down and Cry", "Enter 1, 2, or 3");
-    makeChoice(parseInt(choice));
+    if (choice) {  // Check if choice is not null (i.e., the user didn't just cancel the prompt)
+        makeChoice(parseInt(choice));
+    } else {
+        document.getElementById('story').textContent = "No action taken.";
+    }
 }
 
+// Function handling choices made by the player based on the pop-up input
 function makeChoice(option) {
     try {
         switch (option) {
             case 1:
-                wood += 5;
+                wood += 1;
                 document.getElementById('story').textContent = "You collected wood.";
                 break;
             case 2:
-                stones += 3;
+                stones += 1;
                 document.getElementById('story').textContent = "You collected stones.";
                 break;
             case 3:
@@ -44,7 +51,7 @@ function makeChoice(option) {
                 break;
             default:
                 document.getElementById('story').textContent = "Invalid choice. Please choose 1, 2, or 3.";
-                promptDecision();  // Re-prompt if invalid input
+                setTimeout(promptDecision, 1000);  // Re-prompt after a delay if invalid input
                 return;  // Exit function to avoid updating status if invalid
         }
         updateStatus();
@@ -54,5 +61,7 @@ function makeChoice(option) {
     }
 }
 
-// Optionally, set up a regular interval or event to trigger decisions
-setInterval(promptDecision, 10000); // Every 10 seconds, for example
+// Optionally, trigger the decision prompt manually or via another UI element or game event
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(promptDecision, 3000);  // Wait 3 seconds after game loads to start prompting
+});
