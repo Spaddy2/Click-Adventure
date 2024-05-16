@@ -2,7 +2,7 @@
 let pearls = 0;
 let wood = 0;
 let stones = 0;
-let morale = "neutral"; // Additional state to track the player's morale
+let morale = "neutral";
 
 function collectPearls() {
     pearls += 1;
@@ -19,20 +19,19 @@ function updateStatus() {
     `;
 }
 
-// Initialize pearl collection every second
 setInterval(collectPearls, 1000);
 
 function makeChoice(option) {
     switch (option) {
-        case 1: // Collect wood
-            wood += 5;
+        case 1:
+            wood += 1;
             document.getElementById('story').textContent = "You collected wood.";
             break;
-        case 2: // Collect stones
-            stones += 3;
+        case 2:
+            stones += 1;
             document.getElementById('story').textContent = "You collected stones.";
             break;
-        case 3: // Lay down and cry
+        case 3:
             morale = "low";
             document.getElementById('story').textContent = "You lay down and cried, feeling hopeless.";
             break;
