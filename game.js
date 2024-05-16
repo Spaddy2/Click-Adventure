@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         pickaxe: { level: 0, cost: 100, nextCostIncrease: 250, isAvailable: false }
     };
 
+    // Define the updateDisplay function here
     function updateDisplay() {
         document.getElementById('wood').textContent = `Wood: ${resources.wood}`;
         document.getElementById('stone').textContent = `Stone: ${resources.stone}`;
@@ -30,48 +31,52 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('pickaxeButton').textContent = `Upgrade Pickaxe - Cost: ${upgrades.pickaxe.cost} Stone`;
     }
 
+    // All your event listeners should be defined after the updateDisplay function
     document.getElementById('woodButton').addEventListener('click', function() {
         resources.wood += 1 + upgrades.axe.level;
         updateDisplay();
     });
 
     document.getElementById('stoneButton').addEventListener('click', function() {
-    resources.stone += 1 + upgrades.pickaxe.level;
-    updateDisplay();
-});
-
-document.getElementById('axeButton').addEventListener('click', function() {
-    if (resources.wood >= upgrades.axe.cost) {
-        resources.wood -= upgrades.axe.cost;
-        upgrades.axe.level += 1;
-        upgrades.axe.cost = upgrades.axe.nextCostIncrease;
-        upgrades.axe.nextCostIncrease *= 2; // Double the next cost increase
+        resources.stone += 1 + upgrades.pickaxe.level;
         updateDisplay();
-    } else {
-        alert('Not enough wood to upgrade the axe!');
-    }
-});
+    });
 
-document.getElementById('pickaxeButton').addEventListener('click', function() {
-    if (resources.stone >= upgrades.pickaxe.cost) {
-        resources.stone -= upgrades.pickaxe.cost;
-        upgrades.pickaxe.level += 1;
-        upgrades.pickaxe.cost = upgrades.pickaxe.nextCostIncrease;
-        upgrades.pickaxe.nextCostIncrease *= 2; // Double the next cost increase
-        updateDisplay();
-    } else {
-        alert('Not enough stone to upgrade the pickaxe!');
-    }
-});
+    document.getElementById('axeButton').addEventListener('click', function() {
+        if (resources.wood >= upgrades.axe.cost) {
+            resources.wood -= upgrades.axe.cost;
+            upgrades.axe.level += 1;
+            upgrades.axe.cost = upgrades.axe.nextCostIncrease;
+            upgrades.axe.nextCostIncrease *= 2;
+            updateDisplay();
+        } else {
+            alert('Not enough wood to upgrade the axe!');
+        }
+    });
 
-document.getElementById('buildHouseButton').addEventListener('click', function() {
-    if (resources.wood >= 500) { // House cost is set at 500 wood
-        resources.wood -= 500;
-        document.getElementById('travelers').textContent = `Travelers waiting for housing: ${++travelers}`; // Increment travelers when a house is built
-        updateDisplay();
-    } else {
-        alert('Not enough wood to build a house!');
-    }
+    document.getElementById('pickaxeButton').addEventListener('click', function() {
+        if (resources.stone >= upgrades.pickaxe.cost) {
+            resources.stone -= upgrades.pickaxe.cost;
+            upgrades.pickaxe.level += 1;
+            upgrades.pickaxe.cost = upgrades.pickaxe.nextCostIncrease;
+            upgrades.pickaxe.nextCostIncrease *= 2;
+            updateDisplay();
+        } else {
+            alert('Not enough stone to upgrade the pickaxe!');
+        }
+    });
+
+    document.getElementById('buildHouseButton').addEventListener('click', function() {
+        if (resources.wood >= 500) {
+            resources.wood -= 500;
+            document.getElementById('travelers').textContent = `Travelers waiting for housing: ${++travelers}`;
+            updateDisplay();
+        } else {
+            alert('Not enough wood to build a house!');
+        }
+    });
+
+    updateDisplay(); // Initial call to set up the UI based on initial state
 });
 
 function updateDisplay() {
