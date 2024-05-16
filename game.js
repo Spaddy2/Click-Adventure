@@ -28,11 +28,11 @@ setInterval(collectPearls, 1000);
 function makeChoice(option) {
     switch (option) {
         case 1:
-            wood += 5;
+            wood += 1;
             document.getElementById('story').textContent = "You collected wood.";
             break;
         case 2:
-            stones += 3;
+            stones += 1;
             document.getElementById('story').textContent = "You collected stones.";
             break;
         case 3:
