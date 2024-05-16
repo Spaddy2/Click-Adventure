@@ -1,27 +1,89 @@
-#gameContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Arial', sans-serif;
-}
-#resources, #actions {
-    margin: 10px;
-    text-align: center;
-}
-button {
-    margin: 5px;
-    padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #f8f8f8;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-}
-button:hover {
-    background-color: #e0e0e0;
-    border-color: #888;
-}
-p {
-    font-size: 18px;
-    color: #333;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Candy Box Clone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #5a5a5a;
+        }
+        #candy-counter {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .shop-item, .quest-item, .spell-item, .achievement {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #shop-items, #achievements, #quests, #spellbook {
+            margin-top: 20px;
+        }
+        .title {
+            font-size: 24px;
+            color: #333;
+            margin-top: 30px;
+            border-bottom: 2px solid #4CAF50;
+        }
+        #events {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Candy Box Clone</h1>
+    <div id="candy-counter">Candies: 0</div>
+    <button onclick="eatCandy()">Eat 10 candies</button>
+    <button onclick="throwCandy()">Throw 10 candies on the ground</button>
+    <button onclick="castSpell()" id="spell-button" style="display:none;">Cast a magic spell (500 candies)</button>
+
+    <div class="title">Shop Items</div>
+    <div id="shop-items"></div>
+    
+    <div class="title">Achievements</div>
+    <div id="achievements"></div>
+    
+    <div class="title">Quests</div>
+    <div id="quests">
+        <div class="quest-item">
+            <button onclick="startQuest()">Embark on a Quest (200 candies)</button>
+        </div>
+    </div>
+    
+    <div class="title">Spellbook</div>
+    <div id="spellbook"></div>
+    
+    <div id="events"></div>
+</body>
+</html>
