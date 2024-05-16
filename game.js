@@ -1,9 +1,9 @@
 let pearls = 0;
-let pearlsPerSearch = 1;
+let pearlsPerSecond = 1;
 let resourcePrice = 100;
 
 function updatePearlCount() {
-    pearls += pearlsPerSearch;
+    pearls += pearlsPerSecond;
     document.getElementById('pearl-counter').innerText = `Pearls: ${pearls}`;
 }
 
