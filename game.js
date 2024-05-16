@@ -1,13 +1,14 @@
 let pearls = 0;
-let pearlsPerSecond = 1; // Start with 1 pearl per second as a base rate
+let pearlsPerSecond = 1;
+let upgradeCost = 100;
 
 function updatePearlCount() {
-    pearls += pearlsPerSecond; // Automatically add pearls based on the current rate
+    pearls += pearlsPerSecond;
     document.getElementById('pearl-counter').innerText = `Pearls: ${pearls}`;
 }
 
 function searchPearls() {
-    pearls += 10; // Manually add pearls for specific actions
+    pearls += 10;
     updatePearlCount();
     displayEvent("You found 10 pearls on the beach.");
 }
@@ -32,9 +33,21 @@ function startQuest() {
     }
 }
 
+function buyUpgrade() {
+    if (pearls >= upgradeCost) {
+        pearls -= upgradeCost;
+        pearlsPerSecond += 1; // Increase pearls per second rate
+        upgradeCost *= 2; // Double the cost for the next upgrade
+        updatePearlCount();
+        displayEvent("You purchased a net, increasing your pearl collection rate!");
+    } else {
+        alert("Not enough pearls to buy this upgrade!");
+    }
+}
+
 function displayEvent(message) {
     const eventsDiv = document.getElementById('events');
     eventsDiv.innerHTML += `<div>${message}</div>`;
 }
 
-setInterval(updatePearlCount, 1000); // Update the pearl count every second to simulate passive accumulation
+setInterval(updatePearlCount, 1000); // Update the pearl count every second
