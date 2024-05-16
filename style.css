@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Candy Box Clone</title>
+    <title>Island Survival</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
+            background-color: #e0f7fa; /* Light blue to represent the sky or shallow water */
+            color: #005b69; /* Deep ocean blue for text, represents the ocean */
             margin: 0;
             padding: 20px;
             line-height: 1.6;
         }
         h1 {
-            color: #5a5a5a;
+            color: #00796b; /* Jungle green, reflecting lush foliage */
         }
-        #candy-counter {
+        #pearl-counter {
             font-size: 28px;
             font-weight: 500;
             margin-bottom: 20px;
         }
         button {
-            background-color: #4CAF50;
+            background-color: #26a69a; /* Teal, reminiscent of tropical waters */
             color: white;
             border: none;
             padding: 10px 20px;
@@ -35,40 +35,39 @@
             border-radius: 5px;
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #00897b; /* Darker teal for hover effects */
         }
         .shop-item, .quest-item, .spell-item, .achievement {
             margin-top: 20px;
-            border: 1px solid #ddd;
+            border: 1px solid #b2dfdb; /* Light teal border for separation */
             padding: 10px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: #fff; /* White background for clear content separation */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
         }
         #shop-items, #achievements, #quests, #spellbook {
             margin-top: 20px;
         }
         .title {
             font-size: 24px;
-            color: #333;
+            color: #00695c; /* Dark green for section titles */
             margin-top: 30px;
-            border-bottom: 2px solid #4CAF50;
+            border-bottom: 2px solid #26a69a; /* Teal line to highlight titles */
         }
         #events {
             margin-top: 20px;
             padding: 10px;
-            background-color: #f9f9f9;
-            border-left: 3px solid #4CAF50;
+            background-color: #e0f2f1; /* Very light teal for event logs */
+            border-left: 3px solid #26a69a; /* Stronger teal border for emphasis */
         }
     </style>
 </head>
 <body>
-    <h1>Candy Box Clone</h1>
-    <div id="candy-counter">Candies: 0</div>
-    <button onclick="eatCandy()">Eat 10 candies</button>
-    <button onclick="throwCandy()">Throw 10 candies on the ground</button>
-    <button onclick="castSpell()" id="spell-button" style="display:none;">Cast a magic spell (500 candies)</button>
+    <h1>Island Survival</h1>
+    <div id="pearl-counter">Pearls: 0</div>
+    <button onclick="searchPearls()">Search for pearls on the beach</button>
+    <button onclick="exploreIsland()">Explore the island</button>
 
-    <div class="title">Shop Items</div>
+    <div class="title">Resources</div>
     <div id="shop-items"></div>
     
     <div class="title">Achievements</div>
@@ -77,12 +76,9 @@
     <div class="title">Quests</div>
     <div id="quests">
         <div class="quest-item">
-            <button onclick="startQuest()">Embark on a Quest (200 candies)</button>
+            <button onclick="startQuest()">Embark on a Quest (200 pearls)</button>
         </div>
     </div>
-    
-    <div class="title">Spellbook</div>
-    <div id="spellbook"></div>
     
     <div id="events"></div>
 </body>
