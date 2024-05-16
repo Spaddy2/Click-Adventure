@@ -1,14 +1,16 @@
-// game.js
+// Global variables to track game state
 let pearls = 0;
 let wood = 0;
 let stones = 0;
 let morale = "neutral";
 
+// Function to collect pearls every second
 function collectPearls() {
     pearls += 1;
     document.getElementById('pearls').textContent = 'Pearls: ' + pearls;
 }
 
+// Function to update the game status displayed to the player
 function updateStatus() {
     document.getElementById('status').innerHTML = `
         <p>Location: Island</p>
@@ -19,16 +21,18 @@ function updateStatus() {
     `;
 }
 
+// Initialize pearl collection timer
 setInterval(collectPearls, 1000);
 
+// Function handling choices made by the player
 function makeChoice(option) {
     switch (option) {
         case 1:
-            wood += 1;
+            wood += 5;
             document.getElementById('story').textContent = "You collected wood.";
             break;
         case 2:
-            stones += 1;
+            stones += 3;
             document.getElementById('story').textContent = "You collected stones.";
             break;
         case 3:
