@@ -3,31 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NFL Wheel Spinner</title>
+    <title>NFL Teams Wheel</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="wheel-container">
-            <canvas id="wheel" width="500" height="500"></canvas>
-            <button id="spinButton">Spin the Wheel</button>
-        </div>
+        <canvas id="wheel" width="500" height="500"></canvas>
         <div class="controls">
-            <div class="teams-list">
-                <h3>Teams</h3>
-                <ul id="teams"></ul>
+            <div id="inputs">
+                <!-- Input fields for each team with default odds -->
+                <div class="team">
+                    <label for="team0">Cardinals</label>
+                    <input type="number" id="team0" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team1">Chaser 1</label>
+                    <input type="number" id="team1" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team2">Ravens</label>
+                    <input type="number" id="team2" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team3">Bills</label>
+                    <input type="number" id="team3" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team4">Chaser 6</label>
+                    <input type="number" id="team4" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team5">Bears</label>
+                    <input type="number" id="team5" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team6">Bengals</label>
+                    <input type="number" id="team6" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team7">Browns</label>
+                    <input type="number" id="team7" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team8">Cowboys</label>
+                    <input type="number" id="team8" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team9">Broncos</label>
+                    <input type="number" id="team9" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team10">Chaser 2</label>
+                    <input type="number" id="team10" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team11">Packers</label>
+                    <input type="number" id="team11" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team12">Chaser 5</label>
+                    <input type="number" id="team12" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team13">Chaser 4</label>
+                    <input type="number" id="team13" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team14">Jaguars</label>
+                    <input type="number" id="team14" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team15">Chiefs</label>
+                    <input type="number" id="team15" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team16">Raiders</label>
+                    <input type="number" id="team16" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team17">Chargers</label>
+                    <input type="number" id="team17" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team18">Chaser 3</label>
+                    <input type="number" id="team18" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team19">Dolphins</label>
+                    <input type="number" id="team19" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team20">Vikings</label>
+                    <input type="number" id="team20" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team21">Patriots</label>
+                    <input type="number" id="team21" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team22">Saints</label>
+                    <input type="number" id="team22" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team23">Giants</label>
+                    <input type="number" id="team23" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team24">Jets</label>
+                    <input type="number" id="team24" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team25">Eagles</label>
+                    <input type="number" id="team25" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team26">Steelers</label>
+                    <input type="number" id="team26" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team27">49ers</label>
+                    <input type="number" id="team27" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team28">Seahawks</label>
+                    <input type="number" id="team28" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team29">Buccaneers</label>
+                    <input type="number" id="team29" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team30">Titans</label>
+                    <input type="number" id="team30" value="1" min="0">
+                </div>
+                <div class="team">
+                    <label for="team31">Commanders</label>
+                    <input type="number" id="team31" value="1" min="0">
+                </div>
             </div>
-            <div class="adjust-odds">
-                <h3>Adjust Odds</h3>
-                <input type="text" id="teamName" placeholder="Team Name">
-                <input type="number" id="teamOdds" placeholder="New Odds" min="1">
-                <button id="setOddsButton">Set Odds</button>
-            </div>
-            <div class="remove-team">
-                <h3>Remove Team</h3>
-                <input type="text" id="removeTeamName" placeholder="Team Name">
-                <button id="removeTeamButton">Remove Team</button>
-            </div>
+            <button id="spin">Spin the Wheel</button>
         </div>
     </div>
     <script src="script.js"></script>
