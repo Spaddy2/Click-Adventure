@@ -14,31 +14,43 @@ body {
     align-items: center;
 }
 
-canvas {
-    border: 2px solid #333;
+.wheel-container {
+    position: relative;
+}
+
+#wheel {
+    border: 5px solid #333;
     border-radius: 50%;
-    background-color: white;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .controls {
     margin-top: 20px;
-    text-align: center;
-}
-
-.controls h2 {
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
 }
 
 .controls div {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+input {
+    display: block;
     margin-bottom: 10px;
-}
-
-input[type="number"] {
-    width: 50px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+    padding: 5px;
+    width: 100%;
 }
