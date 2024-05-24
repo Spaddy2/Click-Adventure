@@ -3,18 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NFL Team Wheel</title>
+    <title>NFL Wheel Spinner</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <canvas id="wheel" width="500" height="500"></canvas>
-        <div class="controls">
-            <h2>Set Team Odds</h2>
-            <div id="teamOdds"></div>
+        <div class="wheel-container">
+            <canvas id="wheel" width="500" height="500"></canvas>
             <button id="spinButton">Spin the Wheel</button>
         </div>
+        <div class="controls">
+            <div class="teams-list">
+                <h3>Teams</h3>
+                <ul id="teams"></ul>
+            </div>
+            <div class="adjust-odds">
+                <h3>Adjust Odds</h3>
+                <input type="text" id="teamName" placeholder="Team Name">
+                <input type="number" id="teamOdds" placeholder="New Odds" min="1">
+                <button id="setOddsButton">Set Odds</button>
+            </div>
+            <div class="remove-team">
+                <h3>Remove Team</h3>
+                <input type="text" id="removeTeamName" placeholder="Team Name">
+                <button id="removeTeamButton">Remove Team</button>
+            </div>
+        </div>
     </div>
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
