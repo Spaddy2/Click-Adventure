@@ -3,31 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Island Adventure</title>
-    <link rel="stylesheet" href="style.css">
+    <title>NFL Team Wheel</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="game">
-        <!-- Modal -->
-<div id="choiceModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Choose an action:</p>
-        <button onclick="makeChoice(1)">Collect Wood</button>
-        <button onclick="makeChoice(2)">Collect Stones</button>
-        <button onclick="makeChoice(3)">Lay Down and Cry</button>
-    </div>
-</div>
-
-        <div id="status">
-            <p id="location">Location: Island</p>
-            <p id="pearls">Pearls: 0</p>
-            <p id="wood">Wood: 0</p>
-            <p id="stones">Stones: 0</p>
-            <p id="morale">Morale: Neutral</p>
+    <div class="container">
+        <canvas id="wheel" width="500" height="500"></canvas>
+        <div class="controls">
+            <h2>Set Team Odds</h2>
+            <div id="teamOdds"></div>
+            <button id="spinButton">Spin the Wheel</button>
         </div>
-        <p id="story"></p>
     </div>
-    <script src="game.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
